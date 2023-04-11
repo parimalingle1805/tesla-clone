@@ -1,24 +1,30 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Fade } from "react-awesome-reveal";
+
 
 const Section = (props) => {
   return (
     <Wrap bgImg={props.backgroundImg}>
-        <ItemText>
-            <h1>{props.title}</h1>
-            <p>{props.description}</p>
-        </ItemText>
+        <Fade direction='up'>
+            <ItemText>
+                <h1>{props.title}</h1>
+                <p>{props.description}</p>
+            </ItemText>
+        </Fade>
         <Buttons>
-            <ButtonGroup>
-                <LeftButton>
-                    {props.leftBtnText}
-                </LeftButton>
-                {props.rightBtnText && 
-                    <RightButton>
-                        {props.rightBtnText}
-                    </RightButton>
-                }
-            </ButtonGroup>
+            <Fade direction='up'>
+                <ButtonGroup>
+                    <LeftButton>
+                        {props.leftBtnText}
+                    </LeftButton>
+                    {props.rightBtnText && 
+                        <RightButton>
+                            {props.rightBtnText}
+                        </RightButton>
+                    }
+                </ButtonGroup>
+            </Fade>
             <DownArrow src='/images/down-arrow.svg' />
         </Buttons>
     </Wrap>
